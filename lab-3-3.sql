@@ -4,8 +4,8 @@
 SELECT year, name, MAX(wins)
 FROM teams
 WHERE year > 1959
-GROUP BY name
-ORDER BY wins DESC
+GROUP BY year
+ORDER BY MAX(wins) DESC
 ;
 
 
