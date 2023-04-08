@@ -5,6 +5,27 @@
 -- WHERE column1 = expression1
 -- AND column2 = expression2
 
+-- below is my original code, works but is hard coded and clunky
+--SELECT id
+--FROM teams
+--WHERE year = 2020
+--AND name = "Chicago Cubs"
+--;
+
+--SELECT players.first_name, players.last_name
+--FROM players INNER JOIN stats ON players.id = stats.player_id
+--WHERE stats.team_id = 2931
+-;
+
+SELECT players.first_name, players.last_name
+FROM stats
+    INNER JOIN teams ON stats.team_id = teams.id
+    INNER JOIN players ON stats.player_id = players.id
+WHERE teams.year = 2020 
+AND teams.name = "Chicago Cubs"
+;
+
+
 -- Expected result: 47 rows starting with
 --
 -- +------------+-----------+
